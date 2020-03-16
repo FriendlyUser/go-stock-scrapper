@@ -1,7 +1,7 @@
 package main 
 
 import (
-	fetch "github.com/FriendlyUser/texcite/pkg"
+	fetch "github.com/FriendlyUser/texcite/pkg/fetch"
 	"flag"
 	"fmt"
 )
