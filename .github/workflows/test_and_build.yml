@@ -13,5 +13,5 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go }}
-      - run: go get ./...
+      - run: go get -v -u github.com/${GITHUB_REPOSITORY}
       - run: go test ./...
