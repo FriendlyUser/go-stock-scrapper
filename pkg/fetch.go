@@ -3,7 +3,7 @@
 // uses dynamic json parsing
 // prefer javascript dynamic json parsing over golang
 
-package fetch
+package pkg
 import (
 	"encoding/json"
 	"fmt"
