@@ -1,7 +1,7 @@
 package main 
 
 import (
-	fetch "github.com/FriendlyUser/tex-cite/pkg"
+	fetch "github.com/FriendlyUser/texcite/pkg"
 	"testing"
 	"fmt"
 )
