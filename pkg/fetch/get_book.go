@@ -28,8 +28,8 @@ func GetBookTypes(isbn string) string {
 	authors := strings.Join(gbSearch.Items[0].VolumeInfo.Authors, "")
 	publisher := gbSearch.Items[0].VolumeInfo.Publisher
 	publishedDate := gbSearch.Items[0].VolumeInfo.PublishDate
-	url := gbSearch.Items[0].AccessInfo.WebReaderLink
-	bookData := BookTex{isbn, authors, publisher, publishedDate, url}
+	readUrl := gbSearch.Items[0].AccessInfo.WebReaderLink
+	bookData := BookTex{isbn, authors, publisher, publishedDate, readUrl}
 	latexRef := `@book{book:{{.ISBN}},
 	author={{"{"}}{{.Authors}}{{"}"}},
 	publisher={{"{"}}{{.Publisher}}{{"}"}},
