@@ -16,14 +16,6 @@ import (
 )
 
 
-type BookTex struct {
-	ISBN          string
-	Authors       string
-	Publisher     string
-	PublishedDate string
-	URL           string
-}
-
 func ListToString(data interface{}) []string {
 	if reflect.TypeOf(data).Kind() != reflect.Slice {
 			panic("err: data is not slice")
@@ -37,7 +29,7 @@ func ListToString(data interface{}) []string {
 	return res
 }
 
-func GetBook(isbn string) string {
+func GetBookDyn(isbn string) string {
 	if len(isbn) == 0 {
 		isbn = "9781451648546"
 	}

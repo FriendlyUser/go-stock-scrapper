@@ -25,7 +25,7 @@ func TestFetch(t *testing.T) {
 	year={2011},
 	url={http://play.google.com/books/reader?id=8U2oAAAAQBAJ&hl=&printsec=frontcover&source=gbs_api}
 }`
-	steveJobsBook := fetch.GetBook("9781451648546")
+	steveJobsBook := fetch.GetBookDyn("9781451648546")
 	if expectString != steveJobsBook {
 		t.Logf("The string spacing is different than expected")
 		t.Logf(fmt.Sprintf("%d", len(expectString)))
