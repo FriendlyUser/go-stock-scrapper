@@ -16,7 +16,7 @@ func assertEqual(t *testing.T, a interface{}, b interface{}, message string) {
 	t.Fatal(message)
 }
 
-func TestFetch(t *testing.T) {
+func TestFetchDyn(t *testing.T) {
 	// this spacing must match the fetch functions spacing
 	expectString := `@book{book:9781451648546,
 	author={Walter Isaacson},
@@ -26,6 +26,23 @@ func TestFetch(t *testing.T) {
 	url={http://play.google.com/books/reader?id=8U2oAAAAQBAJ&hl=&printsec=frontcover&source=gbs_api}
 }`
 	steveJobsBook := fetch.GetBookDyn("9781451648546")
+	if expectString != steveJobsBook {
+		t.Logf("The string spacing is different than expected")
+		t.Logf(fmt.Sprintf("%d", len(expectString)))
+		t.Fatal(fmt.Sprintf("%d", len(steveJobsBook)))
+	}
+}
+
+func TestFetchTypes(t *testing.T) {
+	// this spacing must match the fetch functions spacing
+	expectString := `@book{book:9781451648546,
+	author={Walter Isaacson},
+	publisher={Simon and Schuster},
+	isbn={9781451648546},
+	year={2011},
+	url={http://play.google.com/books/reader?id=8U2oAAAAQBAJ&hl=&printsec=frontcover&source=gbs_api}
+}`
+	steveJobsBook := fetch.GetBookTypes("9781451648546")
 	if expectString != steveJobsBook {
 		t.Logf("The string spacing is different than expected")
 		t.Logf(fmt.Sprintf("%d", len(expectString)))
