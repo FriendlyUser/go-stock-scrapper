@@ -11,5 +11,5 @@ func main() {
 	flag.StringVar(&svar, "isbn", "9781451648546", "ISBN 13 code search")
 	flag.Parse()
 	fmt.Println(svar)
-	fetch.GetBook("9781451648546")
+	fetch.GetBookDyn("9781451648546")
 }
