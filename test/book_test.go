@@ -44,6 +44,8 @@ func TestFetchTypes(t *testing.T) {
 }`
 	steveJobsBook := fetch.GetBookTypes("9781451648546")
 	if expectString != steveJobsBook {
+		fmt.Println(expectString)
+		fmt.Println(steveJobsBook)
 		t.Logf("The string spacing is different than expected")
 		t.Logf(fmt.Sprintf("%d", len(expectString)))
 		t.Fatal(fmt.Sprintf("%d", len(steveJobsBook)))

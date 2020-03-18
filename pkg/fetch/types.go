@@ -30,7 +30,7 @@ type volumeInfo struct {
 	Title string
 	Authors []string
 	Publisher string
-	PublishDate string
+	PublishedDate string
 	Description string
 	IndustryIdentifiers []identifers
 	ReadingModes readingModes

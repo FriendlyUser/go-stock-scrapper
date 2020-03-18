@@ -25,9 +25,9 @@ func GetBookTypes(isbn string) string {
 	defer resp.Body.Close()
 	gbSearch := new(GBSearch)
 	json.NewDecoder(resp.Body).Decode(gbSearch)
-	authors := strings.Join(gbSearch.Items[0].VolumeInfo.Authors, "")
+	authors := strings.Join(gbSearch.Items[0].VolumeInfo.Authors, " ")
 	publisher := gbSearch.Items[0].VolumeInfo.Publisher
-	publishedDate := gbSearch.Items[0].VolumeInfo.PublishDate
+	publishedDate := gbSearch.Items[0].VolumeInfo.PublishedDate
 	readUrl := gbSearch.Items[0].AccessInfo.WebReaderLink
 	bookData := BookTex{isbn, authors, publisher, publishedDate, readUrl}
 	latexRef := `@book{book:{{.ISBN}},
