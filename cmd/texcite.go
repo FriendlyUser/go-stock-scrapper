@@ -1,3 +1,5 @@
+// using a different implementation based on predefined structs
+// and parsing non dynamic json
 package main 
 
 import (
@@ -10,6 +12,6 @@ func main() {
 	var svar string
 	flag.StringVar(&svar, "isbn", "9781451648546", "ISBN 13 code search")
 	flag.Parse()
-	bookString := fetch.GetBookDyn("9781451648546")
+	bookString := fetch.GetBookTypes("9781451648546")
 	fmt.Println(bookString)
 }

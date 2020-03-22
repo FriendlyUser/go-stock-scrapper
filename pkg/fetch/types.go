@@ -1,3 +1,4 @@
+// custom types
 package fetch
 
 type BookTex struct {
